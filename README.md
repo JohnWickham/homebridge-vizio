@@ -1,5 +1,5 @@
 # homebridge-vizio
-A Homebridge plugin for controlling your Vizio Smartcast display using HomeKit or Siri.
+A Homebridge plugin for controlling your Vizio Smartcast display using HomeKit or Siri. [What can I do with it?](#controlling-your-display)
 
 ## Getting Started
 You'll need to install [Homebridge](https://github.com/nfarina/homebridge) first:
