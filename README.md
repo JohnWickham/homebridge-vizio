@@ -43,4 +43,4 @@ Homebridge uses a [JSON file](https://github.com/nfarina/homebridge#quick-overvi
 Currently, `homebridge-vizio` only supports turning your display on and off. As Apple adds more service capabilities and accessory types to HomeKit, `homebridge-vizio` can grow to support more functionality.
 
 ## How it Works
-`homebridge-vizio` is based on [`vizio-smart-cast`](https://github.com/heathbar/vizio-smart-cast/blob/master/README.md) by [Heath Paddock](https://github.com/heathbar). Many thanks to his excellent work.
+`homebridge-vizio` is based on [`vizio-smart-cast`](https://github.com/heathbar/vizio-smart-cast/blob/master/README.md) by [Heath Paddock](https://github.com/heathbar). Many thanks to him for his excellent work.
