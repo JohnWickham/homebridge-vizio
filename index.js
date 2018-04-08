@@ -17,8 +17,8 @@ function VizioDisplay(log, config, api) {
 	
 	console.log("Connecting to Vizio display…");
 
-	this.deviceAddress = config["address"];
-	this.accessToken = config["token"];
+	this.deviceAddress = config.address;
+	this.accessToken = config.token;
 	this.displayDevice = new vizio(this.deviceAddress);
 	this.displayDevice.pairing.useAuthToken(this.accessToken);
 	
@@ -46,10 +46,10 @@ VizioDisplay.prototype.getPowerState = function(callback) {
 	
 	this.displayDevice.power.currentMode().then((result) => {
 		
-		var powerState = result["ITEMS"][0]["VALUE"];
+		var powerState = result.ITEMS[0].VALUE;
 		var isPowerOn = powerState == 1;
 
-		console.log("Vizio display is ", (isPowerOn ? "on" : "off"));
+		console.log("Vizio display is", (isPowerOn ? "on" : "off"));
 	
 		callback(null, isPowerOn);
 
@@ -69,11 +69,12 @@ VizioDisplay.prototype.setPowerState = function(state, callback) {
 		powerPromise = this.displayDevice.control.power.off();
 	}
 
-	console.log("Turning Vizio display ", (state == 1 ? "on" : "off"));
+	console.log("Turning Vizio display", (state == 1 ? "on" : "off"));
 
 	powerPromise.then((result) => {
 		
-		var status = result["STATUS"]["RESULT"];
+		var status = result.STATUS.RESULT;
+		var success = status == "SUCCESS" ? 1 : 0;
 		callback(null, success);
 	
 	});
