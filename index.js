@@ -15,14 +15,14 @@ function VizioDisplay(log, config, api) {
 	this.config = config;
 	this.accessories = [];
 	
-	console.log("Connecting to Vizio display…");
+	this.log("Connecting to Vizio display…");
 
 	this.deviceAddress = config.address;
 	this.accessToken = config.token;
 	this.displayDevice = new vizio(this.deviceAddress);
 	this.displayDevice.pairing.useAuthToken(this.accessToken);
 	
-	console.log("Connected to Vizio display at " + this.deviceAddress);
+	this.log("Connected to Vizio display at " + this.deviceAddress);
 
 	var powerService = new Service.Switch(this.name);
 	powerService.getCharacteristic(Characteristic.On).on('get', this.getPowerState.bind(this)).on('set', this.setPowerState.bind(this));	
@@ -36,10 +36,10 @@ function VizioDisplay(log, config, api) {
 // Get the power state of the display
 VizioDisplay.prototype.getPowerState = function(callback) {
 
-	console.log("Fetching Vizio display power state…");
+	this.log("Fetching Vizio display power state…");
 
 	if (!this.displayDevice) {
-		console.log("Couldn't fetch Vizio display power state because no display is connected.");
+		this.log("Couldn't fetch Vizio display power state because no display is connected.");
 		callback(null, false);
 		return;
 	}
@@ -49,7 +49,7 @@ VizioDisplay.prototype.getPowerState = function(callback) {
 		var powerState = result.ITEMS[0].VALUE;
 		var isPowerOn = powerState == 1;
 
-		console.log("Vizio display is", (isPowerOn ? "on" : "off"));
+		this.log("Vizio display is", (isPowerOn ? "on" : "off"));
 	
 		callback(null, isPowerOn);
 
@@ -69,7 +69,7 @@ VizioDisplay.prototype.setPowerState = function(state, callback) {
 		powerPromise = this.displayDevice.control.power.off();
 	}
 
-	console.log("Turning Vizio display", (state == 1 ? "on" : "off"));
+	this.log("Turning Vizio display", (state == 1 ? "on" : "off"));
 
 	powerPromise.then((result) => {
 		
