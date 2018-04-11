@@ -1,6 +1,6 @@
 {
   "name": "homebridge-vizio",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Control your Vizio Smartcast display from HomeKit",
   "main": "index.js",
   "scripts": {
