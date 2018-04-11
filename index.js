@@ -24,6 +24,7 @@ function VizioDisplay(log, config, api) {
 	
 	this.log("Connected to Vizio display at " + this.deviceAddress);
 
+	//Create a service to expose the power state of the display
 	var powerService = new Service.Switch(this.name);
 	powerService.getCharacteristic(Characteristic.On).on('get', this.getPowerState.bind(this)).on('set', this.setPowerState.bind(this));	
 
