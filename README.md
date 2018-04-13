@@ -11,7 +11,7 @@ sudo npm install -g homebridge
 Then, install `homebridge-vizio`:
 
 ````
-npm install homebridge-vizio --save
+npm install homebridge-vizio
 ````
 
 ## Setting Up
