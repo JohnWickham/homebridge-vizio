@@ -15,7 +15,8 @@ npm install homebridge-vizio
 ````
 
 ## Setting Up
-To configure `homebridge-vizio`, you'll need to know the LAN IP address of your display. You can find this in the Smartcast app, or on the display's menu.
+To configure `homebridge-vizio`, you'll need to know the LAN IP address or hostname of your display. You can find this in the Smartcast app, or on the display's menu.
+**Note**: it's reccomended that you use the display's hostname, as it isn't likely to change like it's IP address will. The default hostname appears to be `viziocasttv.local`.
 
 You'll need to pair your display with Homebridge so your display will accept commands to control it. `homebridge-vizio` comes with a helpful setup script that walks you through the process. To use it, use:
 
