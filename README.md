@@ -1,3 +1,6 @@
+## Deprecating homebridge-vizio
+Now that Vizio [https://www.vizio.com/apple](supports HomeKit] and AirPlay 2 out-of-the-box, I'm no longer planning on supporting this plugin. It may still be useful for displays that didn't receive first-party support, so it'll remain available. Can't guarantee that I'll be able to address any new issues.
+
 # homebridge-vizio
 A Homebridge plugin for controlling your Vizio Smartcast display using HomeKit or Siri. [What can I do with it?](#controlling-your-display)
 
