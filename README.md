@@ -18,19 +18,20 @@ npm install homebridge-vizio
 ````
 
 ## Setting Up
-To configure `homebridge-vizio`, you'll need to know the LAN IP address or hostname of your display. You can find this in the Smartcast app, or on the display's menu.
-**Note**: it's reccomended that you use the display's hostname, as it isn't likely to change like it's IP address will. The default hostname appears to be `viziocasttv.local`.
+To configure `homebridge-vizio`, you'll need to know the LAN IP address or hostname of your display. You can find this in the SmartCast app, or on the display's menu.
+
+**Note**: it's recommended that you use the display's hostname, as it isn't likely to change like it's IP address will. The default hostname appears to be `viziocasttv.local`.
 
 You'll need to pair your display with Homebridge so your display will accept commands to control it. `homebridge-vizio` comes with a helpful setup script that walks you through the process. To use it, use:
 
 ````
-node setup.js
+node node_modules/homebridge-vizio/setup.js
 ````
 
-You'll be asked for the IP address of your display, then for the PIN code that the display shows onscreen. Then, you'll be shown an "access token"; copy the token, you'll need it in a moment.
+You'll be asked for the IP address of your display (try using `viziocasttv.local` if you don't know it), then for the PIN code that the display shows on-screen. Then, you'll be shown an "access token"; copy the token, you'll need it in a moment.
 
 ## Configuring Homebridge
-Homebridge uses a [JSON file](https://github.com/nfarina/homebridge#quick-overview) to determine what accessories are exposed to HomeKit. Add the following entry to yours:
+Homebridge uses a [JSON file](https://github.com/nfarina/homebridge#quick-overview) to determine what accessories are exposed to HomeKit. Add the following entry to your `config.json`:
 
 ````
 "accessories": [
